@@ -1,0 +1,26 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  aspect-ratio: 1/1;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  background-color: var(--color-grayish-blue);
+}
+.icon:hover {
+  background-color: var(--color-soft-red);
+}
+
+.facebook .icon {
+  mask-image: url('../../assets/icon-facebook.svg');
+  -webkit-mask-image: url('../../assets/icon-facebook.svg');
+}
+
+.pinterest .icon {
+  mask-image: url('../../assets/icon-pinterest.svg');
+  -webkit-mask-image: url('../../assets/icon-pinterest.svg');
+}
+
+.instagram .icon {
+  mask-image: url('../../assets/icon-instagram.svg');
+  -webkit-mask-image: url('../../assets/icon-instagram.svg');
+}

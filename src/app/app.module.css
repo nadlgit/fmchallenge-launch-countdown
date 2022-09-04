@@ -1,0 +1,21 @@
+.app {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.message {
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+}
+
+.attribution a {
+  color: inherit;
+}
+.attribution a:hover {
+  color: var(--color-soft-red);
+}

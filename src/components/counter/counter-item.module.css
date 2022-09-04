@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  color: var(--color-soft-red);
+}
+
+.label {
+  text-transform: uppercase;
+}
