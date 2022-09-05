@@ -1,13 +1,19 @@
 import styles from './counter-item.module.css';
 
+const displayedValue = (value: number) =>
+  Math.min(Math.max(value, 0), 99).toString().padStart(2, '0');
+
 type CounterItemProps = {
-  value: number;
   label: string;
+  currentValue: number;
 };
 
-export const CounterItem = ({ value, label }: CounterItemProps) => (
+export const CounterItem = ({ label, currentValue }: CounterItemProps) => (
   <div className={styles.wrapper}>
-    <span className={styles.value}>{value}</span>
-    <span className={styles.label}>{label}</span>
+    <div className={styles.card}>
+      <div>{displayedValue(currentValue)}</div>
+      <div className={styles.top}></div>
+    </div>
+    <div className={styles.label}>{label}</div>
   </div>
 );

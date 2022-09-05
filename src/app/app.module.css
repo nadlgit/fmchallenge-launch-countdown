@@ -2,10 +2,12 @@
   display: grid;
   place-items: center;
   text-align: center;
+  gap: 1rem;
 }
 
 .message {
-  color: var(--color-white);
+  font-size: clamp(1.125rem, calc(0.875rem + 0.7vw), 1.625rem);
+  color: white;
   text-transform: uppercase;
 }
 
@@ -17,5 +19,5 @@
   color: inherit;
 }
 .attribution a:hover {
-  color: var(--color-soft-red);
+  color: var(--accent-color);
 }

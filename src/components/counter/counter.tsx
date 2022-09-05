@@ -3,9 +3,9 @@ import { CounterItem } from './counter-item';
 
 export const Counter = () => (
   <div className={styles.counter}>
-    <CounterItem value={8} label="days" />
-    <CounterItem value={23} label="hours" />
-    <CounterItem value={55} label="minutes" />
-    <CounterItem value={41} label="seconds" />
+    <CounterItem label="days" currentValue={8} />
+    <CounterItem label="hours" currentValue={23} />
+    <CounterItem label="minutes" currentValue={55} />
+    <CounterItem label="seconds" currentValue={41} />
   </div>
 );

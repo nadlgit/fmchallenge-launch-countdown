@@ -1,4 +1,5 @@
 .counter {
   display: flex;
-  gap: 1em;
+  /* gap: 1rem; */
+  gap: 2rem;
 }

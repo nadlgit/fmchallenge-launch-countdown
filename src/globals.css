@@ -12,19 +12,15 @@ body {
 }
 
 :root {
-  --color-grayish-blue: hsl(237, 18%, 59%);
-  --color-soft-red: hsl(345, 95%, 68%);
-  --color-white: hsl(0, 0%, 100%);
-  --color-dark-desaturated-blue: hsl(236, 21%, 26%);
-  --color-very-dark-blue: hsl(235, 16%, 14%);
-  --color-very-dark-black-blue: hsl(234, 17%, 12%);
+  --primary-color: hsl(237, 18%, 59%);
+  --accent-color: hsl(345, 95%, 68%);
 }
 
 body {
   font-family: 'Red Hat Text', sans-serif;
   font-weight: 700;
   font-size: 0.875rem;
-  color: var(--color-grayish-blue);
+  color: var(--primary-color);
   background: url('./assets/pattern-hills.svg') no-repeat bottom, url('./assets/bg-stars.svg'),
-    var(--color-very-dark-blue);
+    hsl(235, 16%, 14%);
 }
