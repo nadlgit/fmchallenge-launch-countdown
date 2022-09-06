@@ -1,11 +1,11 @@
 import styles from './counter-item.module.css';
 
-const displayedValue = (value: number) =>
-  Math.min(Math.max(value, 0), 99).toString().padStart(2, '0');
+const displayedValue = (value: number | undefined) =>
+  value === undefined ? '' : Math.min(Math.max(value, 0), 99).toString().padStart(2, '0');
 
 type CounterItemProps = {
   label: string;
-  currentValue: number;
+  currentValue?: number;
 };
 
 export const CounterItem = ({ label, currentValue }: CounterItemProps) => (

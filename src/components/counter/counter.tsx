@@ -7,12 +7,7 @@ import type { RemainingTime } from '../../helpers';
 
 export const Counter = () => {
   const [launchDate, setLaunchDate] = useState<Date | null>();
-  const [remaining, setRemaining] = useState<RemainingTime>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const [remaining, setRemaining] = useState<RemainingTime | null>();
 
   useEffect(() => {
     const launch = getLaunchDate();
@@ -27,10 +22,10 @@ export const Counter = () => {
 
   return (
     <div className={styles.counter}>
-      <CounterItem label="days" currentValue={remaining.days} />
-      <CounterItem label="hours" currentValue={remaining.hours} />
-      <CounterItem label="minutes" currentValue={remaining.minutes} />
-      <CounterItem label="seconds" currentValue={remaining.seconds} />
+      <CounterItem label="days" currentValue={remaining?.days} />
+      <CounterItem label="hours" currentValue={remaining?.hours} />
+      <CounterItem label="minutes" currentValue={remaining?.minutes} />
+      <CounterItem label="seconds" currentValue={remaining?.seconds} />
     </div>
   );
 };
