@@ -21,7 +21,7 @@ body {
   font-weight: 700;
   font-size: 0.875rem;
   color: var(--primary-color);
-  background: url('./assets/pattern-hills.svg') no-repeat bottom right /
+  background: url('./assets/pattern-hills.svg') fixed no-repeat bottom right /
       max(100vw, calc(1440 / 197 * 25vh)) 25vh,
     url('./assets/bg-stars.svg'), hsl(235, 16%, 14%);
 }
