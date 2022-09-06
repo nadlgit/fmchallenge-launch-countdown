@@ -1,10 +1,6 @@
 export function getLaunchDate() {
   const result = new Date();
   result.setDate(result.getDate() + 14);
-  result.setHours(9);
-  result.setMinutes(30);
-  result.setSeconds(0);
-  result.setMilliseconds(0);
   return result;
 }
 
