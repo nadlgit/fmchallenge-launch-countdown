@@ -6,14 +6,15 @@
   padding: 0;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 :root {
   --primary-color: hsl(237, 18%, 59%);
   --accent-color: hsl(345, 95%, 68%);
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
 
 body {
@@ -21,7 +22,8 @@ body {
   font-weight: 700;
   font-size: 0.875rem;
   color: var(--primary-color);
-  background: url('./assets/pattern-hills.svg') fixed no-repeat bottom right /
-      max(100vw, calc(1440 / 197 * 25vh)) 25vh,
+  text-align: center;
+  background: url('./assets/pattern-hills.svg') no-repeat bottom right /
+      max(100vw, calc(1440 / 197 * 25vh)) 25%,
     url('./assets/bg-stars.svg'), hsl(235, 16%, 14%);
 }
