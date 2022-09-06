@@ -1,18 +1,26 @@
 .app {
+  position: relative;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   text-align: center;
-  gap: 1rem;
 }
 
 .message {
+  --app-message-letter-spacing: clamp(0.375rem, 0.33em, 0.5rem);
+  max-width: 80vw;
   font-size: clamp(1.125rem, calc(0.875rem + 0.7vw), 1.625rem);
+  line-height: clamp(1.5rem, 1.16em, 1.875rem);
+  letter-spacing: var(--app-message-letter-spacing);
+  margin-right: calc(-0.5 * var(--app-message-letter-spacing));
   color: white;
   text-transform: uppercase;
 }
 
 .attribution {
-  font-size: 0.6875rem;
+  position: absolute;
+  bottom: 2px;
+  font-size: 0.675rem;
 }
 
 .attribution a {
