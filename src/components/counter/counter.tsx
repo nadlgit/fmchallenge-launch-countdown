@@ -14,6 +14,7 @@ export const Counter = () => {
   }, []);
 
   useEffect(() => {
+    setRemaining(undefined);
     const intervalId = setInterval(() => {
       setRemaining(getRemainingTimeFromDate(launchDate));
     }, 1000);
