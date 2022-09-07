@@ -1,4 +1,5 @@
 import styles from './counter-item.module.css';
+import { memo } from 'react';
 
 const displayedValue = (value: number | undefined) =>
   value === undefined ? '' : Math.min(Math.max(value, 0), 99).toString().padStart(2, '0');
@@ -8,7 +9,7 @@ type CounterItemProps = {
   currentValue?: number;
 };
 
-export const CounterItem = ({ label, currentValue }: CounterItemProps) => (
+export const CounterItem = memo(({ label, currentValue }: CounterItemProps) => (
   <div className={styles.wrapper}>
     <div className={styles.card}>
       <div>{displayedValue(currentValue)}</div>
@@ -16,4 +17,4 @@ export const CounterItem = ({ label, currentValue }: CounterItemProps) => (
     </div>
     <div className={styles.label}>{label}</div>
   </div>
-);
+));

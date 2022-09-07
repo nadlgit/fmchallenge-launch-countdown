@@ -6,19 +6,19 @@ import { useEffect, useState } from 'react';
 import type { RemainingTime } from '../../helpers';
 
 export const Counter = () => {
-  const [launchDate, setLaunchDate] = useState<Date | null>();
-  const [remaining, setRemaining] = useState<RemainingTime | null>();
+  const [launchDate, setLaunchDate] = useState<Date>();
+  const [remaining, setRemaining] = useState<RemainingTime>();
 
   useEffect(() => {
-    const launch = getLaunchDate();
-    setLaunchDate(launch);
-    setRemaining(getRemainingTimeFromDate(launch));
+    setLaunchDate(getLaunchDate());
+  }, []);
 
+  useEffect(() => {
     const intervalId = setInterval(() => {
-      setRemaining(getRemainingTimeFromDate(launchDate ?? launch));
+      setRemaining(getRemainingTimeFromDate(launchDate));
     }, 1000);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [launchDate]);
 
   return (
     <div className={styles.counter}>

@@ -11,7 +11,7 @@ export type RemainingTime = {
   seconds: number;
 };
 
-export function getRemainingTimeFromDate(date: Date): RemainingTime {
+export function getRemainingTimeFromDate(date: Date | undefined): RemainingTime {
   const remainingTime = date ? date.getTime() - Date.now() : 0;
   const result =
     remainingTime > 0
