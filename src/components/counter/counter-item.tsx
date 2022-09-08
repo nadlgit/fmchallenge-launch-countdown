@@ -12,13 +12,12 @@ type CounterItemProps = {
 
 export const CounterItem = memo(({ label, currentValue, previousValue }: CounterItemProps) => {
   const [shouldFlip, setShouldFlip] = useState(false);
-  const FLIP_DURATION_MILLISECONDS = 800;
 
   useEffect(() => {
     setShouldFlip(currentValue !== previousValue);
     const timeoutId = setTimeout(() => {
       setShouldFlip(false);
-    }, FLIP_DURATION_MILLISECONDS);
+    }, 900);
     return () => clearTimeout(timeoutId);
   }, [currentValue, previousValue]);
 
