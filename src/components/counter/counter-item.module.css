@@ -75,6 +75,7 @@
   justify-content: center;
   width: 100%;
   height: 50%;
+  backface-visibility: hidden;
 }
 .card-top {
   top: 0;
@@ -100,20 +101,22 @@
 }
 
 .card-prev {
-  color: blue;
   opacity: 0;
 }
 
 .card-flip .card-prev {
   opacity: 1;
 }
-.card-flip .card-prev.card-top {
+.card-flip .card-prev.card-top,
+.card-curr.card-bottom {
   z-index: 1;
-  animation: flip-top 0.8s;
+  background-color: inherit;
+}
+.card-flip .card-prev.card-top {
+  animation: flip-top 0.5s forwards;
 }
 .card-flip .card-curr.card-bottom {
-  z-index: 1;
-  animation: flip-bottom 0.8s;
+  animation: flip-bottom 0.5s forwards;
 }
 
 @keyframes flip-top {
@@ -123,14 +126,14 @@
   }
   to {
     transform-origin: bottom;
-    transform: rotateX(90deg);
+    transform: rotateX(180deg);
   }
 }
 
 @keyframes flip-bottom {
   from {
     transform-origin: top;
-    transform: rotateX(-90deg);
+    transform: rotateX(-180deg);
   }
   to {
     transform-origin: top;
