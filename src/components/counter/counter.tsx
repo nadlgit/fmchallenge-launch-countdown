@@ -12,17 +12,25 @@ export const Counter = () => {
     previous?: RemainingTime;
   }>();
 
+  const updateRemaining = (date: Date | undefined) => {
+    if (date) {
+      setRemaining((s) => ({
+        previous: s?.current,
+        current: getRemainingTimeFromDate(date),
+      }));
+    } else {
+      setRemaining(undefined);
+    }
+  };
+
   useEffect(() => {
     setLaunchDate(getLaunchDate());
   }, []);
 
   useEffect(() => {
-    setRemaining(undefined);
+    updateRemaining(launchDate);
     const intervalId = setInterval(() => {
-      setRemaining((s) => ({
-        previous: s?.current,
-        current: getRemainingTimeFromDate(launchDate),
-      }));
+      updateRemaining(launchDate);
     }, 1000);
     return () => clearInterval(intervalId);
   }, [launchDate]);
