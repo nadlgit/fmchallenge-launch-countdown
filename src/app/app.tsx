@@ -15,11 +15,11 @@ const ChallengeAttribution = () => (
 
 export const App = () => {
   return (
-    <div className={styles.app}>
+    <main className={styles.app}>
       <Message />
       <Counter />
       <Social />
       <ChallengeAttribution />
-    </div>
+    </main>
   );
 };
